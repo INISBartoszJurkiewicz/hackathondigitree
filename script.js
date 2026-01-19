@@ -1,7 +1,7 @@
 // ===========================================
 // COUNTDOWN TIMER
 // ===========================================
-const targetDate = new Date('2026-04-11T06:00:00');
+const targetDate = new Date('2026-02-20T08:00:00');
 
 const countdown = () => {
   const el = document.getElementById('countdown');
