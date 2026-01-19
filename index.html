@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hack Digitree 2026 — Minimalistyczna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Main stacking container - this holds all the stacking sections -->
+  <main class="stacking-pages">
+
+    <!-- Hero Section - z-index: 1 (bottom of stack) -->
+    <header class="stacking-page" id="hero" style="--stack-index: 1;">
+      <div class="hero__bg"></div>
+      <div class="hero__logo" aria-hidden="true">
+        <video class="hero__logo-video" src="https://digitree.pl/wp-content/uploads/2025/10/dtr_scrub_small.mp4"
+          autoplay muted loop playsinline></video>
+      </div>
+      <div class="hero__content reveal">
+        <div class="hero__eyebrow">Hackathon AI</div>
+        <h1 class="hero__title glitch" data-text="Hack Digitree 2026">Hack Digitree 2026</h1>
+        <p class="hero__subtitle">Definiuj, kreuj, napędzaj zmiany AI w całej grupie Digitree. Bądź tą zmianą.</p>
+        <div class="hero__countdown-label">Wydarzenie zacznie się za:</div>
+        <div class="hero__countdown" id="countdown"></div>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#register">
+            <span class="btn__text">Dołącz</span>
+            <span class="btn__glow"></span>
+          </a>
+          <a class="btn btn--ghost" href="#timeline">
+            <span class="btn__text">Poznaj zasady</span>
+            <span class="btn__glow"></span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Register Section - z-index: 2 (MOVED RIGHT AFTER HERO) -->
+    <section class="stacking-page section-contrast" id="register" style="--stack-index: 2;">
+      <div class="section__inner section__inner--registration">
+        <div class="section__header sticky-header">
+          <div class="tag">Rejestracja</div>
+          <h2 id="registration-title">Wybierz sposób uczestnictwa</h2>
+          <p id="registration-subtitle">Zgłoś pomysł lub swoje umiejętności. Zespoły ujawniamy tydzień przed startem.
+          </p>
+        </div>
+
+        <div class="content-wrapper">
+
+          <!-- Step 1: Registration Option Cards (visible by default) -->
+          <div class="registration-step registration-step--cards active" id="registration-cards">
+            <div class="registration-options reveal">
+              <div class="registration-card" data-type="team">
+                <div class="registration-card__icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                  </svg>
+                </div>
+                <h3>Zgłoś pomysł jako zespół</h3>
+                <p>Macie gotowy zespół i pomysł? Zgłoście się razem!</p>
+                <ul class="registration-card__features">
+                  <li>Gotowy zespół 2-3 osoby</li>
+                  <li>Wspólna wizja projektu</li>
+                  <li>dopasowany wachlarz umiejętności</li>
+                </ul>
+                <div class="registration-card__cta">
+                  <span class="btn btn--small">
+                    <span class="btn__text">Wybierz</span>
+                    <span class="btn__glow"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="registration-card" data-type="individual">
+                <div class="registration-card__icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3>Zgłoś pomysł indywidualnie</h3>
+                <p>Masz pomysł i szukasz zespołu do realizacji?</p>
+                <ul class="registration-card__features">
+                  <li>Skup się na pomyśle, a zespół Ci sami dobierzemy</li>
+                  <li>Wynajduj niszowe możliwości, w których jesteś świetny</li>
+                  <li>szukaj rozwiązań problemów, a potem to zbuduj z zespołem</li>
+                </ul>
+                <div class="registration-card__cta">
+                  <span class="btn btn--small">
+                    <span class="btn__text">Wybierz</span>
+                    <span class="btn__glow"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="registration-card" data-type="creator">
+                <div class="registration-card__icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  </svg>
+                </div>
+                <h3>Nie mam pomysłu, ale chcę uczestniczyć</h3>
+                <p>Chcesz tworzyć, ale szukasz inspiracji?</p>
+                <ul class="registration-card__features">
+                  <li>Masz umiejętności? Znajdziemy dla Ciebie idealny zespół</li>
+                  <li>To właśnie dzięki Tobie wszystko jest możliwe</li>
+                  <li>Pizza za darmo!</li>
+                </ul>
+                <div class="registration-card__cta">
+                  <span class="btn btn--small">
+                    <span class="btn__text">Wybierz</span>
+                    <span class="btn__glow"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Registration Form (hidden by default) -->
+          <div class="registration-step registration-step--form" id="registration-form-step">
+            <!-- Back button at top -->
+            <button type="button" class="btn btn--back" id="back-to-cards">
+              <span class="btn__text">zmień typ zgłoszenia</span>
+              <span class="btn__glow"></span>
+            </button>
+
+            <!-- Side-by-side layout: selected card LEFT, form RIGHT -->
+            <div class="registration-layout">
+              <!-- Selected card (left side) -->
+              <div class="registration-layout__card" id="selected-card-container">
+                <!-- This will be populated by JavaScript with the selected card clone -->
+              </div>
+
+              <!-- Form (right side) -->
+              <div class="registration-layout__form">
+                <form class="form" id="registrationForm">
+                  <!-- Common Fields -->
+                  <div class="form__group">
+                    <label for="name">Imię i nazwisko</label>
+                    <input id="name" name="name" type="text" required>
+                  </div>
+                  <div class="form__group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+                  </div>
+
+                  <!-- Team Fields -->
+                  <div class="form__group hidden" data-field="team">
+                    <label for="teamMembers">Wpisz imiona i nazwiska członków zespołu</label>
+                    <textarea id="teamMembers" name="teamMembers" rows="3"
+                      placeholder="Np: Jan Kowalski, Anna Nowak, Piotr Wiśniewski (max 4 osoby)"></textarea>
+                  </div>
+                  <div class="form__group hidden" data-field="team">
+                    <label for="ideaTeam">Opis pomysłu zespołu</label>
+                    <textarea id="ideaTeam" name="ideaTeam" rows="3"
+                      placeholder="Jaki problem rozwiązujecie jako zespół?"></textarea>
+                  </div>
+                  <div class="form__group hidden" data-field="team">
+                    <label for="segmentTeam">Segment</label>
+                    <select id="segmentTeam" name="segmentTeam">
+                      <option>Usprawnienie procesów</option>
+                      <option>Komunikacja i współpraca</option>
+                      <option>Digitree Open</option>
+                    </select>
+                  </div>
+
+                  <!-- Individual Fields -->
+                  <div class="form__group hidden" data-field="individual">
+                    <label for="ideaIndividual">Opis Twojego pomysłu</label>
+                    <textarea id="ideaIndividual" name="ideaIndividual" rows="3"
+                      placeholder="Jaki problem rozwiązujesz?"></textarea>
+                  </div>
+                  <div class="form__group hidden" data-field="individual">
+                    <label for="segmentIndividual">Segment</label>
+                    <select id="segmentIndividual" name="segmentIndividual">
+                      <option>Usprawnienie procesów</option>
+                      <option>Komunikacja i współpraca</option>
+                      <option>Digitree Open</option>
+                    </select>
+                  </div>
+
+                  <!-- Creator Fields -->
+                  <div class="form__group hidden" data-field="creator">
+                    <label for="skills">Umiejętności</label>
+                    <textarea id="skills" name="skills" rows="3"
+                      placeholder="Opisz swoje umiejętności: programowanie (Python, JS...), design (Figma, UI/UX...), analityka, marketing..."></textarea>
+                  </div>
+
+                  <div class="form__actions">
+                    <button type="submit" class="btn btn--primary">
+                      <span class="btn__text">Wyślij zgłoszenie</span>
+                      <span class="btn__glow"></span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Segments Section - z-index: 3 (RIGHT AFTER REGISTRATION) -->
+    <section class="stacking-page section-dark" id="segments" style="--stack-index: 3;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">Segmenty</div>
+          <h2>Zgłoś pomysł w 3 polach tematycznych</h2>
+          <p>Zgłaszaj pomysły w jednym z trzech pól tematycznych. Możesz zgłaszać wiele pomysłów do wielu kategorii. Nie
+            ma limitu zgłoszeń. Im więcej pomysłów zgłosisz, tym większa szansa na nagrodę za najlepszy pomysł w danej
+            kategorii. Zobacz co jest brane pod uwagę przy ocenie projektów i kto wybiera zwycięzców w danej kategorii.
+          </p>
+        </div>
+        <div class="content-wrapper">
+          <div class="grid grid--three reveal">
+            <div class="segment">
+              <div class="segment__icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z" />
+                </svg>
+              </div>
+              <div class="segment__number">01</div>
+              <h3>Usprawnienie procesów</h3>
+              <p>Waga procesu dla biznesu i skuteczność usprawnienia decydują o wyniku.</p>
+              <ul class="segment__features">
+                <li>Automatyzacja powtarzalnych zadań</li>
+                <li>Usprawnienia relizacji trudnych zadań</li>
+                <li>Ułatwienia w podejmowaniu decyzji</li>
+              </ul>
+              <div class="segment__jury">
+                <strong>Jury:</strong> Zarząd Digitree
+              </div>
+            </div>
+            <div class="segment">
+              <div class="segment__icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div class="segment__number">02</div>
+              <h3>Komunikacja i współpraca</h3>
+              <p>Wpływ na jakość i zakres komunikacji oraz łatwość użycia decydują o wyniku.</p>
+              <ul class="segment__features">
+                <li>Usprawnienia współpracy zespołowej</li>
+                <li>Narzędzia AI wspierające współpracę i komunikację</li>
+                <li>Łatwość i wszechstronność wymiany wiedzy</li>
+              </ul>
+              <div class="segment__jury">
+                <strong>Głosowanie:</strong> Społeczność pracowników
+              </div>
+            </div>
+            <div class="segment">
+              <div class="segment__icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div class="segment__number">03</div>
+              <h3>Digitree Open</h3>
+              <p>Otwarta formuła bez ograniczeń.</p>
+              <ul class="segment__features">
+                <li>Pełna swoboda tematyki</li>
+                <li>Innowacyjne rozwiązania AI</li>
+                <li>Eksperymenty i nowe technologie</li>
+              </ul>
+              <div class="segment__jury">
+                <strong>Jury:</strong> Coachowie Hackathonu
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Timeline Section - z-index: 4 (AFTER SEGMENTS) -->
+    <section class="stacking-page section-darker" id="timeline" style="--stack-index: 4;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">Harmonogram</div>
+          <h2>Od zgłoszeń do Demo Day</h2>
+          <p>Hackathon Digitree to: Dwumiesięczna ideacja, tydzień matchmakingu, weekend hackowania i poniedziałkowe
+            demo.</p>
+        </div>
+        <div class="content-wrapper">
+          <div class="timeline-cards reveal">
+            <!-- Card 1: Zgłoszenia -->
+            <div class="flip-card" data-tilt>
+              <div class="flip-card__inner">
+                <div class="flip-card__front">
+                  <div class="flip-card__date">01.01.2026 - 31.03.2026</div>
+                  <h3>Zgłaszanie pomysłów i uczestników</h3>
+                  <p>Masz czas do 31 marca żeby zgłosić swój pomysł, lub chęć uczestnictwa w wydarzeniu.</p>
+                </div>
+                <div class="flip-card__back">
+                  <h4>Dodatkowe informacje</h4>
+                  <p>Pamiętaj, że możesz zgłaszać wiele pomysłów w wielu kategoriach. Możesz też nie mieć pomysłu, ale
+                    masz wiedzę i umiejętności, które mogą pomóc w realizacji któregoś z pomysłów.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Matchmaking -->
+            <div class="flip-card" data-tilt>
+              <div class="flip-card__inner">
+                <div class="flip-card__front">
+                  <div class="flip-card__date">6 kwietnia 2026</div>
+                  <h3>Formowanie zespołów i publikacja pomysłów</h3>
+                  <p>Matchmaking 3-osobowych drużyn i start pracy koncepcyjnej</p>
+                </div>
+                <div class="flip-card__back">
+                  <h4>Jak działa matchmaking?</h4>
+                  <p>Na podstawie Twoich preferencji dopasujemy Cię do zespołu. Od tego dnia również możecie już
+                    "nieoficjalnie" kontaktować się ze sobą w celu wyboru pomysłów i pracy nad nimi.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3: Hackathon -->
+            <div class="flip-card" data-tilt>
+              <div class="flip-card__inner">
+                <div class="flip-card__front">
+                  <div class="flip-card__date">11-12 Kwietnia 2026</div>
+                  <h3>Weekend Hackathonu</h3>
+                  <p>Start w sobotę, praca do niedzieli. Coach'owie rotują między zespołami wspierając ich w realizacji
+                  </p>
+                </div>
+                <div class="flip-card__back">
+                  <h4>Co Cię czeka?</h4>
+                  <p>48 godzin intensywnej pracy zespołowej on-line. Każdy z uczestników otrzyma voucher na pizzę i
+                    wsparcie dedykowanych coachów, którzy pomogą usprawnić Wam pracę i nakierować na lepsze tory</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 4: Demo Day -->
+            <div class="flip-card" data-tilt>
+              <div class="flip-card__inner">
+                <div class="flip-card__front">
+                  <div class="flip-card__date">13 Kwietnia 2026</div>
+                  <h3>DEMO Day</h3>
+                  <p>Prezentacje, ocena jury, nagrody finansowe i trofea.</p>
+                </div>
+                <div class="flip-card__back">
+                  <h4>Finał wydarzenia</h4>
+                  <p>Każdy zespół ma 15 minut na prezentację. Jury ocenia pomysły dla każdej z kategorii.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 5: Ogłoszenie wyników -->
+            <div class="flip-card" data-tilt>
+              <div class="flip-card__inner">
+                <div class="flip-card__front">
+                  <div class="flip-card__date">17 Kwietnia 2026</div>
+                  <h3>Ogłoszenie wyników</h3>
+                  <p>Wręczenie nagród i trofeów dla najlepszych z wybranych kategorii</p>
+                </div>
+                <div class="flip-card__back">
+                  <h4>Głosowanie i wyniki</h4>
+                  <p>Od 13 do 16 kwietnia pracownicy Digitree głosują na najlepsze rozwiązanie z kategorii "Komunikacja
+                    i
+                    współpraca". Wyniki z wszystkich kategorii ogłaszane są na wspólnym callu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jury Section - z-index: 5 -->
+    <section class="stacking-page section-dark" id="jury" style="--stack-index: 5;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">JURY</div>
+          <h2>Poznaj JURY</h2>
+          <p>Projekty oceniane są przez Zarząd Digitree oraz dedykowanych Coach'ów. Jury w kategorii "Usprawnienie
+            procesów" składa się z członków zarządu, a „Open Digitree” z Coach’ów którzy oceniają wpływ na biznes i
+            sposób wykonania. Kategoria "Komunikacja i współpraca" oceniana jest przez głosowanie wszystkich
+            pracowników.</p>
+        </div>
+        <div class="content-wrapper">
+
+          <div class="jury-grid jury-grid--combined reveal">
+            <div class="person-card person-card--zarzad">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=480&q=80"
+                  alt="Jan Kowalski">
+              </div>
+              <div class="person-card__info">
+                <h4>Jan Kowalski</h4>
+                <span class="person-card__role">CEO</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Ocenia:</strong> Wpływ strategiczny i potencjał wzrostu
+              </div>
+            </div>
+            <div class="person-card person-card--zarzad">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=480&q=80"
+                  alt="Anna Nowak">
+              </div>
+              <div class="person-card__info">
+                <h4>Anna Nowak</h4>
+                <span class="person-card__role">CTO</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Ocenia:</strong> Wykonalność techniczna i innowacyjność
+              </div>
+            </div>
+            <div class="person-card person-card--zarzad">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=480&q=80"
+                  alt="Piotr Wiśniewski">
+              </div>
+              <div class="person-card__info">
+                <h4>Piotr Wiśniewski</h4>
+                <span class="person-card__role">COO</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Ocenia:</strong> Usprawnienie procesów operacyjnych
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=480&q=80"
+                  alt="Maria Zielińska">
+              </div>
+              <div class="person-card__info">
+                <h4>Maria Zielińska</h4>
+                <span class="person-card__role">Senior Developer</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> Backend, AI/ML, architektura
+              </div>
+            </div>
+            <div class="person-card person-card--coach person-card--flip person-card--special">
+              <div class="person-card__flip">
+                <div class="person-card__face person-card__face--front">
+                  <div class="person-card__info">
+                    <h4>Kim są Coach'owie?</h4>
+                    <p class="person-card__intro">To dedykowani specjaliści ze świata AI, biznesu, czy technologii,
+                      którzy pomogą Wam udoskonalić i przyspieszyć prace nad pomysłami</p>
+                  </div>
+                </div>
+                <div class="person-card__face person-card__face--back">
+                  <p>Są tu, by dzielić się wiedzą, a nie tylko oceniać. Dostępni przez cały hackathon, pomagają
+                    priorytetyzować zadania i adresować ryzyka.</p>
+                </div>
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=480&q=80"
+                  alt="Tomasz Lewandowski">
+              </div>
+              <div class="person-card__info">
+                <h4>Tomasz Lewandowski</h4>
+                <span class="person-card__role">Product Manager</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> Strategia produktu, UX, prezentacje
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format&fit=crop&w=480&q=80"
+                  alt="Karolina Dąbrowska">
+              </div>
+              <div class="person-card__info">
+                <h4>Karolina Dąbrowska</h4>
+                <span class="person-card__role">Lead Designer</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> UI/UX, prototypowanie, branding
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=480&q=80"
+                  alt="Adam Kaczmarek">
+              </div>
+              <div class="person-card__info">
+                <h4>Adam Kaczmarek</h4>
+                <span class="person-card__role">AI Strateg</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> Generatywne AI, roadmapy, skalowanie
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=480&q=80"
+                  alt="Ewa Maj">
+              </div>
+              <div class="person-card__info">
+                <h4>Ewa Maj</h4>
+                <span class="person-card__role">Data Scientist</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> Analiza danych, modele klasyfikacji, eksperymenty
+              </div>
+            </div>
+            <div class="person-card person-card--coach">
+              <div class="person-card__photo">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=480&q=80"
+                  alt="Paweł Nowak">
+              </div>
+              <div class="person-card__info">
+                <h4>Paweł Nowak</h4>
+                <span class="person-card__role">Tech Lead</span>
+              </div>
+              <div class="person-card__focus">
+                <strong>Specjalizacja:</strong> DevOps, infrastruktura, CI/CD
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrolling Ticker for Criteria (marginal, bottom of section) -->
+          <div class="jury-ticker reveal jury-ticker--compact" id="juryTicker">
+            <div class="jury-ticker__label">Jak oceniamy projekty?</div>
+            <div class="jury-ticker__viewport">
+              <div class="jury-ticker__track">
+                <div class="jury-ticker__content">
+                  <span class="jury-ticker__item" data-magnify>Wpływ na biznes</span> •
+                  <span class="jury-ticker__item" data-magnify>Innowacyjność</span> •
+                  <span class="jury-ticker__item" data-magnify>Wykonalność</span> •
+                  <span class="jury-ticker__item" data-magnify>Jakość prezentacji</span> •
+                  <span class="jury-ticker__item" data-magnify>Potencjał wzrostu</span> •
+                  <span class="jury-ticker__item" data-magnify>Strategia</span> •
+                  <span class="jury-ticker__item" data-magnify>Kreatywność</span> •
+                  <span class="jury-ticker__item" data-magnify>User Experience</span> •
+                </div>
+                <div class="jury-ticker__content" aria-hidden="true">
+                  <span class="jury-ticker__item" data-magnify>Wpływ na biznes</span> •
+                  <span class="jury-ticker__item" data-magnify>Innowacyjność</span> •
+                  <span class="jury-ticker__item" data-magnify>Wykonalność</span> •
+                  <span class="jury-ticker__item" data-magnify>Jakość prezentacji</span> •
+                  <span class="jury-ticker__item" data-magnify>Potencjał wzrostu</span> •
+                  <span class="jury-ticker__item" data-magnify>Strategia</span> •
+                  <span class="jury-ticker__item" data-magnify>Kreatywność</span> •
+                  <span class="jury-ticker__item" data-magnify>User Experience</span> •
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prizes Section - z-index: 6 (MOVED HERE) -->
+    <section class="stacking-page section-contrast" id="prizes" style="--stack-index: 6;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">Nagrody</div>
+          <h2>Co możesz zyskać (oprócz sławy)</h2>
+          <p>Dla każdego coś dobrego. Od gadżetów, przez pizzę, aż po główne trofea.</p>
+        </div>
+        <div class="content-wrapper">
+          <div class="prizes-container reveal">
+            <!-- Left Side: Visual -->
+            <div class="prizes-visual">
+              <div class="prizes-visual__image active" id="prize-img-0">
+                <img src="./assets/prize_tshirt.png" alt="Koszulka">
+              </div>
+              <div class="prizes-visual__image" id="prize-img-1">
+                <img src="./assets/prize_pizza.png" alt="Pizza">
+              </div>
+              <div class="prizes-visual__image" id="prize-img-2">
+                <img src="./assets/prize_trophy.png" alt="Trofea">
+              </div>
+              <div class="prizes-visual__image" id="prize-img-3">
+                <img src="./assets/prize_ai.png" alt="Voucher AI">
+              </div>
+            </div>
+
+            <!-- Right Side: List -->
+            <div class="prizes-list">
+              <!-- Item 1 -->
+              <div class="prize-item active" data-index="0">
+                <div class="prize-progress">
+                  <div class="bar"></div>
+                </div>
+                <div class="prize-content">
+                  <div class="prize-header">
+                    <div class="prize-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M20.38 3.4a1.6 1.6 0 0 0-1.6-1.6H5.22a1.6 1.6 0 0 0-1.6 1.6L2 6.6l1.6 1.6 3.06-3.06L9 9l.94 11.22a1.6 1.6 0 0 0 1.6 1.48h1.02a1.6 1.6 0 0 0 1.6-1.48L15 9l2.34-3.86 3.06 3.06 1.6-1.6-1.62-3.14z" />
+                      </svg>
+                    </div>
+                    <div class="prize-number">01</div>
+                    <h3>Koszulka dla każdego</h3>
+                  </div>
+                  <p>Pamiątkowy, limitowany merch dla wszystkich uczestników hackathonu.</p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="prize-item" data-index="1">
+                <div class="prize-progress">
+                  <div class="bar"></div>
+                </div>
+                <div class="prize-content">
+                  <div class="prize-header">
+                    <div class="prize-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M15 21l-3-8-3 8a8 8 0 1 1 6 0z" />
+                        <path d="M12 11V3" />
+                        <path d="M13.5 6.5L10 10" />
+                        <circle cx="9" cy="8" r="1" fill="currentColor" />
+                        <circle cx="15" cy="8" r="1" fill="currentColor" />
+                      </svg>
+                    </div>
+                    <div class="prize-number">02</div>
+                    <h3>Voucher na pizzę</h3>
+                  </div>
+                  <p>Wspieramy Was w trakcie pracy. Voucher na jedzenie w weekend hackathonu.</p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="prize-item" data-index="2">
+                <div class="prize-progress">
+                  <div class="bar"></div>
+                </div>
+                <div class="prize-content">
+                  <div class="prize-header">
+                    <div class="prize-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M8 21h8m-4-9v9m-8-2.7a6 6 0 0 1 3.3-8.8C7.5 5 8 5 9 5c0-1.7 1.3-3 3-3s3 1.3 3 3c1 0 1.5 0 1.7 1.5a6 6 0 0 1 3.3 8.8" />
+                      </svg>
+                    </div>
+                    <div class="prize-number">03</div>
+                    <h3>Trofea za najlepsze miejsce</h3>
+                  </div>
+                  <p>Dla zwycięzców w każdej kategorii: statuetki oraz nagrody finansowe.</p>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="prize-item" data-index="3">
+                <div class="prize-progress">
+                  <div class="bar"></div>
+                </div>
+                <div class="prize-content">
+                  <div class="prize-header">
+                    <div class="prize-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                      </svg>
+                    </div>
+                    <div class="prize-number">04</div>
+                    <h3>Dedykowany ekstra voucher na AI</h3>
+                  </div>
+                  <p>Specjalna nagroda za najciekawsze wykorzystanie Generative AI.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- FAQ Section - z-index: 8 -->
+    <section class="stacking-page section-darker" id="faq" style="--stack-index: 8;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">FAQ</div>
+          <h2>Najczęstsze pytania</h2>
+          <p>Wszystko, co musisz wiedzieć przed startem.</p>
+        </div>
+        <div class="content-wrapper">
+          <div class="accordion reveal" id="faqList">
+            <div class="accordion__item">
+              <button class="accordion__trigger">Czy potrzebuję pomysłu, by dołączyć?</button>
+              <div class="accordion__content">Nie. Creatorzy dołączają bez pomysłu i łączą się z ideatorami tydzień
+                przed
+                startem.</div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger">Czy mogę zgłosić wiele pomysłów?</button>
+              <div class="accordion__content">Tak, w wielu segmentach. Każdy pomysł wypełnij osobno.</div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger">Jak wygląda ocena?</button>
+              <div class="accordion__content">Jury: Zarząd i rotujący moderatorzy. Komunikację ocenia społeczność
+                pracowników.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer - z-index: 9 (top of stack) -->
+    <footer class="stacking-page section-darkest" id="footer" style="--stack-index: 9;">
+      <div class="footer__content">
+        <div>Hack Digitree 2026</div>
+        <div>Digitree Group — AI Hackathon</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
