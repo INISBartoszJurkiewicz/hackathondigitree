@@ -1,4 +1,8 @@
-# Koncepcja 1 – Minimalistyczna Brutalistyczna
+# Hackathon AI - Digitree Group
+
+> HackathonAI in the digitree group
+
+## Koncepcja 1 – Minimalistyczna Brutalistyczna
 
 Styl inspirowany [effica.framer.ai](https://effica.framer.ai/?utm_source=framer): maksymalny kontrast, typografia jako główny nośnik, zero zbędnych ozdobników.
 
@@ -36,4 +40,3 @@ Styl inspirowany [effica.framer.ai](https://effica.framer.ai/?utm_source=framer)
 - Lenis dla smooth scroll.
 - Formy: Supabase/Firebase auth + zapisy do DB.
 - Obrazy WebP, lazy loading; transform/opacity dla płynności (GPU).
-
