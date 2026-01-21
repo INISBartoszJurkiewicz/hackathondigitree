@@ -99,12 +99,12 @@ def send_deployment_notification(changes):
         return False
 
 if __name__ == "__main__":
-    # Define the changes that were just made
     changes_list = [
-        "Zaktualizowano datę odliczania (20.02.2026, 8:00)",
-        "Dostosowano sekcję 'Zasady' (zmiana nazwy z 'Segmenty')",
-        "Zaktualizowano harmonogram (zgłoszenia 20.02, Hackathon 28.02-01.03, Demo Day 02.03, Wyniki 06.03)",
-        "Poprawiono opisy i linkowanie przycisków"
+        "Wdrożono funkcjonalny formularz zgłoszeniowy (Zespół, Indywidualny, Creator)",
+        "Zintegrowano Google Sheets do zapisu zgłoszeń",
+        "Dodano powiadomienia mailowe (dla uczestnika i admina) oraz Google Chat",
+        "Wdrożono zabezpieczenie Honeypot przeciwko botom",
+        "Dodano modal z podziękowaniem za zgłoszenie (UI)"
     ]
     
     print("🚀 Initiating deployment notification...")
