@@ -144,6 +144,12 @@
               <div class="registration-layout__form">
                 <form class="form" id="registrationForm">
                   <!-- Common Fields -->
+                  <!-- Honeypot field (hidden from users, visible to bots) -->
+                  <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
+                    <label for="confirm_email_address">Confirm Email</label>
+                    <input type="text" id="confirm_email_address" name="confirm_email_address" tabindex="-1"
+                      autocomplete="off">
+                  </div>
                   <div class="form__group">
                     <label for="name">Imię i nazwisko</label>
                     <input id="name" name="name" type="text" required>
@@ -717,6 +723,23 @@
     </footer>
 
   </main>
+
+  <!-- Success Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal">
+      <div class="modal__icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="modal__title">Dziękujemy za zgłoszenie!</h3>
+      <p class="modal__text">Twoje zgłoszenie zostało wysłane. Sprawdź swoją skrzynkę mailową (również folder SPAM).</p>
+      <button class="btn btn--primary modal__close" onclick="closeModal()">
+        <span class="btn__text">Wróć na stronę</span>
+        <span class="btn__glow"></span>
+      </button>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

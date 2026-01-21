@@ -334,20 +334,88 @@ updateStackingOffsets();
 // ===========================================
 // FORM SUBMISSION HANDLER
 // ===========================================
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKQ0gr3pXqvV3_A1r3Rg75aft0PDDhA3cMgn7mLPW-8eK_wFGCP5pb-qGTmSWET99I/exec"; // <--- WKLEJ TUTAJ LINK DO SWOJEGO SKRYPTU
+
 const registrationForm = document.getElementById('registrationForm');
+const successModal = document.getElementById('successModal');
+const submitBtn = registrationForm ? registrationForm.querySelector('button[type="submit"]') : null;
+
+// Modal functions
+window.closeModal = () => {
+  if (successModal) successModal.classList.remove('active');
+  showCardsStep(); // Return to start
+};
+
+const showModal = () => {
+  if (successModal) successModal.classList.add('active');
+};
+
 if (registrationForm) {
   registrationForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    if (!selectedType) {
+      alert("Wybierz typ zgłoszenia!");
+      return;
+    }
+
+    if (SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+      alert("Skonfiguruj poprawnie adres URL skryptu w pliku script.js!");
+      console.error("Missing Script URL");
+      return;
+    }
+
+    // Visual feedback
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="btn__text">Wysyłanie...</span>';
+    submitBtn.classList.add('loading'); // Optional styling hook
+    submitBtn.disabled = true;
+
     const formData = new FormData(registrationForm);
-    formData.append('registrationType', selectedType);
+    const data = {
+      type: selectedType,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      honeypot: formData.get('confirm_email_address') // Honeypot field
+    };
 
-    console.log('Form submitted:', Object.fromEntries(formData));
+    // Add specific fields based on type
+    if (selectedType === 'team') {
+      data.teamMembers = formData.get('teamMembers');
+      data.idea = formData.get('ideaTeam');
+      data.segment = formData.get('segmentTeam');
+    } else if (selectedType === 'individual') {
+      data.idea = formData.get('ideaIndividual');
+      data.segment = formData.get('segmentIndividual');
+    } else if (selectedType === 'creator') {
+      data.skills = formData.get('skills');
+    }
 
-    alert('Dziękujemy za zgłoszenie! Skontaktujemy się z Tobą wkrótce.');
+    console.log("Sending data:", data);
 
-    registrationForm.reset();
-    showCardsStep();
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Important for Google Apps Script Web App
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        // With no-cors, we get an opaque response, so we assume success if it didn't throw
+        console.log("Request sent");
+        showModal();
+        registrationForm.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Wystąpił błąd podczas wysyłania zgłoszenia. Spróbuj ponownie.');
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+      });
   });
 }
 
