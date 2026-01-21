@@ -13,7 +13,7 @@ def send_deployment_notification(changes):
     
     # Create the card content
     card_header = {
-        "title": "🚀 Wdrożenie Hackathon AI zakończone",
+        "title": "🚀 Wdrożyliśmy zmiany na stronie Hackathonu",
         "subtitle": "Zmiany zostały pomyślnie opublikowane",
         "imageUrl": "https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/rocket_launch/default/48px.svg",
         "imageType": "CIRCLE"
@@ -44,10 +44,10 @@ def send_deployment_notification(changes):
         "buttonList": {
             "buttons": [
                 {
-                    "text": "Przejdź do repozytorium",
+                    "text": "Odwiedź stronę",
                     "onClick": {
                         "openLink": {
-                            "url": "https://github.com/INISBartoszJurkiewicz/hackathondigitree"
+                            "url": "https://video.inis360.pl/HackathonAI/index.html"
                         }
                     }
                 }
@@ -82,8 +82,8 @@ def send_deployment_notification(changes):
             headers={'Content-Type': 'application/json'}
         )
         
-        # Use simple ssl context if needed (usually defaults are fine)
-        context = ssl.create_default_context()
+        # Bypass SSL verification for this script
+        context = ssl._create_unverified_context()
         
         with urllib.request.urlopen(req, context=context) as response:
             if response.status == 200:
