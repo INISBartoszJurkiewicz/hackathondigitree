@@ -100,11 +100,10 @@ def send_deployment_notification(changes):
 
 if __name__ == "__main__":
     changes_list = [
-        "Wdrożono funkcjonalny formularz zgłoszeniowy (Zespół, Indywidualny, Creator)",
-        "Zintegrowano Google Sheets do zapisu zgłoszeń",
-        "Dodano powiadomienia mailowe (dla uczestnika i admina) oraz Google Chat",
-        "Wdrożono zabezpieczenie Honeypot przeciwko botom",
-        "Dodano modal z podziękowaniem za zgłoszenie (UI)"
+        "Zaktualizowano grafiki nagród (styl szkicu technicznego)",
+        "Poprawiono opisy nagród (Pizza, Koszulka, Trofea, AI Voucher)",
+        "Zastosowano efekt 'shadow ban' (silny blur) dla ukrytych członków Jury",
+        "Dodano etykietę 'WKRÓTCE' na ukrytych kartach Jury"
     ]
     
     print("🚀 Initiating deployment notification...")

@@ -1,12 +1,76 @@
 :root {
-  --bg: #000;
-  --text: #f0f0f0;
-  --muted: #a5a5a5;
-  --accent: #ffd700;
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #C4C8CC;
+  --accent: #F6ED0F;
   --card: #0b0b0b;
   --border: #222;
   --radius: 8px;
-  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font: 'Brockmann', system-ui, -apple-system, sans-serif;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-bolditalic-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-bold-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-mediumitalic-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-mediumitalic-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-medium-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-regularitalic-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-regularitalic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-regular-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-semibolditalic-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-semibolditalic-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brockmann';
+  src: url('assets/fonts/brockmann-semibold-webfont.woff2') format('woff2'),
+    url('assets/fonts/brockmann-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Register CSS property for animation */
@@ -33,6 +97,23 @@ body {
   font-family: var(--font);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: lowercase;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.registration-card .btn {
+  text-transform: none;
 }
 
 /* ===========================================
