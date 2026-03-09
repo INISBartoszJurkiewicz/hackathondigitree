@@ -370,7 +370,7 @@ a {
 .btn {
   position: relative;
   padding: 16px 40px;
-  border-radius: 999px;
+  border-radius: 0;
   font-weight: 700;
   letter-spacing: 0.01em;
   display: inline-flex;
@@ -2448,4 +2448,262 @@ textarea::placeholder {
 
 .modal__close {
   width: 100%;
+}
+
+/* ===========================================
+   NEWS SLIDER
+   =========================================== */
+.news-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-slider {
+  flex: 1;
+  overflow: hidden;
+}
+
+.news-slider__track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card {
+  min-width: 100%;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.news-card__date {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+
+.news-card h3.news-card__title {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.news-card__content {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.news-card__content p {
+  color: var(--muted);
+}
+
+.news-card__content ol,
+.news-card__content ul {
+  padding-left: 20px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-card__content li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.news-card__content li strong {
+  color: var(--text);
+  display: block;
+}
+
+.news-slider__btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.news-slider__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.news-slider__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.news-slider__btn:disabled:hover {
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+/* ===========================================
+   TEAMS SECTION — TABLE
+   =========================================== */
+#teams .section__inner {
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font);
+}
+
+.teams-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.teams-table th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.teams-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.teams-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.teams-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.teams-table td {
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+/* Column: Drużyna */
+.teams-table .col-letter {
+  width: 80px;
+}
+
+.team-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+/* Column: Nazwa */
+.teams-table .col-name {
+  min-width: 200px;
+}
+
+.teams-table .col-name strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+  text-transform: lowercase;
+}
+
+.teams-table .col-name span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Column: Uczestnicy */
+.teams-table .col-members {
+  color: var(--muted);
+  font-size: 13px;
+  min-width: 200px;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.member-patronat {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+/* Column: Meet */
+.teams-table .col-meet {
+  width: 140px;
+  text-align: right;
+}
+
+.btn-meet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: transparent;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-meet:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(246, 237, 15, 0.07);
+}
+
+.meet-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.meet-icon rect {
+  fill: var(--accent);
+}
+
+.meet-icon path {
+  fill: #000;
 }
