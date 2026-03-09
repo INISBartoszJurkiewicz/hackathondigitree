@@ -2451,6 +2451,114 @@ textarea::placeholder {
 }
 
 /* ===========================================
+   NEWS SLIDER
+   =========================================== */
+.news-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-slider {
+  flex: 1;
+  overflow: hidden;
+}
+
+.news-slider__track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card {
+  min-width: 100%;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.news-card__date {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+
+.news-card h3.news-card__title {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.news-card__content {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.news-card__content p {
+  color: var(--muted);
+}
+
+.news-card__content ol,
+.news-card__content ul {
+  padding-left: 20px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-card__content li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.news-card__content li strong {
+  color: var(--text);
+  display: block;
+}
+
+.news-slider__btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.news-slider__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.news-slider__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.news-slider__btn:disabled:hover {
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+/* ===========================================
    TEAMS SECTION — TABLE
    =========================================== */
 #teams .section__inner {
@@ -2539,7 +2647,20 @@ textarea::placeholder {
 .teams-table .col-members {
   color: var(--muted);
   font-size: 13px;
-  min-width: 160px;
+  min-width: 200px;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.member-patronat {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
 }
 
 /* Column: Meet */
