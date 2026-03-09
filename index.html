@@ -37,7 +37,7 @@
         <div class="hero__countdown-label">Wydarzenie zacznie się za:</div>
         <div class="hero__countdown" id="countdown"></div>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#register">
+          <a class="btn btn--primary" href="#teams">
             <span class="btn__text">Dołącz</span>
             <span class="btn__glow"></span>
           </a>
@@ -49,7 +49,7 @@
       </div>
     </header>
 
-    <!-- Register Section - z-index: 2 (MOVED RIGHT AFTER HERO) -->
+    <!-- WYKOMENTOWANA SEKCJA REJESTRACJA (zastąpiona przez ZESPOŁY poniżej)
     <section class="stacking-page section-contrast" id="register" style="--stack-index: 2;">
       <div class="section__inner section__inner--registration">
         <div class="section__header sticky-header">
@@ -59,167 +59,186 @@
             startem.
           </p>
         </div>
+        ... [treść sekcji rejestracji ukryta] ...
+      </div>
+    </section>
+    -->
 
+    <!-- Teams Section - z-index: 2 -->
+    <section class="stacking-page section-contrast" id="teams" style="--stack-index: 2;">
+      <div class="section__inner">
+        <div class="section__header sticky-header">
+          <div class="tag">Zespoły</div>
+          <h2>poznaj swój zespół</h2>
+          <p>11 drużyn, jeden hackathon. Kliknij przycisk swojego zespołu, aby dołączyć do dedykowanego pokoju Google Meet i zacząć działać.</p>
+        </div>
         <div class="content-wrapper">
-
-          <!-- Step 1: Registration Option Cards (visible by default) -->
-          <div class="registration-step registration-step--cards active" id="registration-cards">
-            <div class="registration-options reveal">
-              <div class="registration-card" data-type="team">
-                <div class="registration-card__icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path
-                      d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-                  </svg>
-                </div>
-                <h3>zgłoś pomysł jako zespół</h3>
-                <p>Macie gotowy zespół i pomysł? Zgłoście się razem!</p>
-                <ul class="registration-card__features">
-                  <li>gotowy zespół 2-3 osoby</li>
-                  <li>wspólna wizja projektu</li>
-                  <li>dopasowany wachlarz umiejętności</li>
-                </ul>
-                <div class="registration-card__cta">
-                  <span class="btn btn--small">
-                    <span class="btn__text">wybierz</span>
-                    <span class="btn__glow"></span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="registration-card" data-type="individual">
-                <div class="registration-card__icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3>zgłoś pomysł indywidualnie</h3>
-                <p>Masz pomysł i szukasz zespołu do realizacji?</p>
-                <ul class="registration-card__features">
-                  <li>skup się na pomyśle, a zespół Ci sami dobierzemy</li>
-                  <li>wynajduj niszowe możliwości, w których jesteś świetny</li>
-                  <li>szukaj rozwiązań problemów, a potem to zbuduj z zespołem</li>
-                </ul>
-                <div class="registration-card__cta">
-                  <span class="btn btn--small">
-                    <span class="btn__text">wybierz</span>
-                    <span class="btn__glow"></span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="registration-card" data-type="creator">
-                <div class="registration-card__icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                  </svg>
-                </div>
-                <h3>nie mam pomysłu, ale chcę uczestniczyć</h3>
-                <p>Chcesz tworzyć, ale szukasz inspiracji?</p>
-                <ul class="registration-card__features">
-                  <li>masz umiejętności? Znajdziemy dla Ciebie idealny zespół</li>
-                  <li>to właśnie dzięki Tobie wszystko jest możliwe</li>
-                  <li>pizza za darmo!</li>
-                </ul>
-                <div class="registration-card__cta">
-                  <span class="btn btn--small">
-                    <span class="btn__text">wybierz</span>
-                    <span class="btn__glow"></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2: Registration Form (hidden by default) -->
-          <div class="registration-step registration-step--form" id="registration-form-step">
-            <!-- Back button at top -->
-            <button type="button" class="btn btn--back" id="back-to-cards">
-              <span class="btn__text">zmień typ zgłoszenia</span>
-              <span class="btn__glow"></span>
-            </button>
-
-            <!-- Side-by-side layout: selected card LEFT, form RIGHT -->
-            <div class="registration-layout">
-              <!-- Selected card (left side) -->
-              <div class="registration-layout__card" id="selected-card-container">
-                <!-- This will be populated by JavaScript with the selected card clone -->
-              </div>
-
-              <!-- Form (right side) -->
-              <div class="registration-layout__form">
-                <form class="form" id="registrationForm">
-                  <!-- Common Fields -->
-                  <!-- Honeypot field (hidden from users, visible to bots) -->
-                  <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;">
-                    <label for="confirm_email_address">confirm email</label>
-                    <input type="text" id="confirm_email_address" name="confirm_email_address" tabindex="-1"
-                      autocomplete="off">
-                  </div>
-                  <div class="form__group">
-                    <label for="name">imię i nazwisko</label>
-                    <input id="name" name="name" type="text" required>
-                  </div>
-                  <div class="form__group">
-                    <label for="email">email</label>
-                    <input id="email" name="email" type="email" required>
-                  </div>
-
-                  <!-- Team Fields -->
-                  <div class="form__group hidden" data-field="team">
-                    <label for="teamMembers">wpisz imiona i nazwiska członków zespołu</label>
-                    <textarea id="teamMembers" name="teamMembers" rows="3"
-                      placeholder="Np: Jan Kowalski, Anna Nowak, Piotr Wiśniewski (max 4 osoby)"></textarea>
-                  </div>
-                  <div class="form__group hidden" data-field="team">
-                    <label for="ideaTeam">opis pomysłu zespołu</label>
-                    <textarea id="ideaTeam" name="ideaTeam" rows="3"
-                      placeholder="Jaki problem rozwiązujecie jako zespół?"></textarea>
-                  </div>
-                  <div class="form__group hidden" data-field="team">
-                    <label for="segmentTeam">segment</label>
-                    <select id="segmentTeam" name="segmentTeam">
-                      <option>Usprawnienie procesów</option>
-                      <option>Komunikacja i współpraca</option>
-                      <option>digitree Open</option>
-                    </select>
-                  </div>
-
-                  <!-- Individual Fields -->
-                  <div class="form__group hidden" data-field="individual">
-                    <label for="ideaIndividual">opis twojego pomysłu</label>
-                    <textarea id="ideaIndividual" name="ideaIndividual" rows="3"
-                      placeholder="Jaki problem rozwiązujesz?"></textarea>
-                  </div>
-                  <div class="form__group hidden" data-field="individual">
-                    <label for="segmentIndividual">segment</label>
-                    <select id="segmentIndividual" name="segmentIndividual">
-                      <option>Usprawnienie procesów</option>
-                      <option>Komunikacja i współpraca</option>
-                      <option>digitree Open</option>
-                    </select>
-                  </div>
-
-                  <!-- Creator Fields -->
-                  <div class="form__group hidden" data-field="creator">
-                    <label for="skills">umiejętności</label>
-                    <textarea id="skills" name="skills" rows="3"
-                      placeholder="Opisz swoje umiejętności: programowanie (Python, JS...), design (Figma, UI/UX...), analityka, marketing..."></textarea>
-                  </div>
-
-                  <div class="form__actions">
-                    <button type="submit" class="btn btn--primary">
-                      <span class="btn__text">Wyślij zgłoszenie</span>
-                      <span class="btn__glow"></span>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <table class="teams-table reveal">
+            <thead>
+              <tr>
+                <th class="col-letter">Drużyna</th>
+                <th class="col-name">Nazwa</th>
+                <th class="col-members">Uczestnicy</th>
+                <th class="col-meet">Google Meet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-letter"><span class="team-letter">A</span></td>
+                <td class="col-name">
+                  <strong>Neuronauci</strong>
+                  <span>Eksploratorzy sieci neuronowych</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/ozp-grkq-evr" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">B</span></td>
+                <td class="col-name">
+                  <strong>Prompt Hakerzy</strong>
+                  <span>Mistrzowie inżynierii promptów</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/aqb-iyqx-kpu" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">C</span></td>
+                <td class="col-name">
+                  <strong>Matrycowcy</strong>
+                  <span>Budowniczowie głębokich struktur</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/ryk-rrhs-efz" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">D</span></td>
+                <td class="col-name">
+                  <strong>Głęboka Myśl</strong>
+                  <span>Szukają odpowiedzi na każde pytanie</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/jqi-igrt-kod" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">E</span></td>
+                <td class="col-name">
+                  <strong>Tokenatorzy</strong>
+                  <span>Rozkładają każdy problem na czynniki</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/htz-bykh-knj" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">F</span></td>
+                <td class="col-name">
+                  <strong>Syntetyczni</strong>
+                  <span>Generują nową jakość z danych</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/awq-zway-bqa" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">G</span></td>
+                <td class="col-name">
+                  <strong>Wektorzy</strong>
+                  <span>Nawigują w przestrzeni embeddingów</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/mxq-dtdj-nog" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">H</span></td>
+                <td class="col-name">
+                  <strong>Entropijni</strong>
+                  <span>Wprowadzają porządek w chaosie danych</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/aqp-dord-msx" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">I</span></td>
+                <td class="col-name">
+                  <strong>Cyfrowi Agenci</strong>
+                  <span>Autonomiczni, działają tam, gdzie inni nie mogą</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/anr-gwzn-kjp" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">J</span></td>
+                <td class="col-name">
+                  <strong>Binarni Szamani</strong>
+                  <span>Zaklęcia w kodzie, magia w produkcie</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/vyo-kwyg-fwh" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-letter"><span class="team-letter">K</span></td>
+                <td class="col-name">
+                  <strong>Difuzorzy</strong>
+                  <span>Rozpraszają innowację w całej organizacji</span>
+                </td>
+                <td class="col-members"></td>
+                <td class="col-meet">
+                  <a class="btn-meet" href="https://meet.google.com/tga-dazx-jut" target="_blank" rel="noopener">
+                    <svg class="meet-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#00897B"/><path d="M5 9a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9z" fill="white"/><path d="M15.5 11.2l3.5-2.2v6l-3.5-2.2v-1.6z" fill="white"/></svg>
+                    Dołącz
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -462,17 +481,16 @@
                 <strong>Specjalizacja:</strong> Frontend, Backend, Mobile, Architektura, AI, RnD
               </div>
             </div>
-            <div class="person-card person-card--coach person-card--stub">
+            <div class="person-card person-card--coach">
               <div class="person-card__photo">
-                <img src="https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format&fit=crop&w=480&q=80"
-                  alt="Coach">
+                <img src="./assets/kamil_markiewka.jpg" alt="Kamil Markiewka">
               </div>
               <div class="person-card__info">
-                <h4>WKRÓTCE</h4>
-                <span class="person-card__role">Coach</span>
+                <h4>kamil markiewka</h4>
+                <span class="person-card__role">Group Design Director</span>
               </div>
               <div class="person-card__focus">
-                <strong>Specjalizacja:</strong> Wkrótce
+                <strong>Specjalizacja:</strong> UX/UI/Product Design, Strategia, Branding, Image Gen
               </div>
             </div>
             <div class="person-card person-card--coach person-card--flip person-card--special">

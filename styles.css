@@ -370,7 +370,7 @@ a {
 .btn {
   position: relative;
   padding: 16px 40px;
-  border-radius: 999px;
+  border-radius: 0;
   font-weight: 700;
   letter-spacing: 0.01em;
   display: inline-flex;
@@ -2448,4 +2448,141 @@ textarea::placeholder {
 
 .modal__close {
   width: 100%;
+}
+
+/* ===========================================
+   TEAMS SECTION — TABLE
+   =========================================== */
+#teams .section__inner {
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font);
+}
+
+.teams-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.teams-table th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.teams-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.teams-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.teams-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.teams-table td {
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+/* Column: Drużyna */
+.teams-table .col-letter {
+  width: 80px;
+}
+
+.team-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+/* Column: Nazwa */
+.teams-table .col-name {
+  min-width: 200px;
+}
+
+.teams-table .col-name strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+  text-transform: lowercase;
+}
+
+.teams-table .col-name span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Column: Uczestnicy */
+.teams-table .col-members {
+  color: var(--muted);
+  font-size: 13px;
+  min-width: 160px;
+}
+
+/* Column: Meet */
+.teams-table .col-meet {
+  width: 140px;
+  text-align: right;
+}
+
+.btn-meet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: transparent;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-meet:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(246, 237, 15, 0.07);
+}
+
+.meet-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.meet-icon rect {
+  fill: var(--accent);
+}
+
+.meet-icon path {
+  fill: #000;
 }
