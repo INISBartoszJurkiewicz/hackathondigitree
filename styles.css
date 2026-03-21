@@ -2707,3 +2707,112 @@ textarea::placeholder {
 .meet-icon path {
   fill: #000;
 }
+
+/* ============================================================
+   DEMO DAY SECTION
+   ============================================================ */
+
+.demoday-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.demoday-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.demoday-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.demoday-card__date {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.demoday-card__day {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.demoday-card__number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.btn-meet--demoday {
+  font-size: 12px;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+.demoday-agenda {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.demoday-agenda__item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.demoday-agenda__item:last-child {
+  border-bottom: none;
+}
+
+.demoday-agenda__item--break {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.demoday-agenda__item--end .demoday-agenda__desc {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.demoday-agenda__time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 80px;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.demoday-agenda__desc {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.demoday-agenda__who {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .demoday-grid {
+    grid-template-columns: 1fr;
+  }
+}
